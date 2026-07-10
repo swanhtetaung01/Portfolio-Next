@@ -58,7 +58,7 @@ export type CaseFile = {
   summary: string;
   stack: string[];
   image: string;
-  github: string;
+  github?: string;
   demo?: string;
 };
 
@@ -75,6 +75,16 @@ export const caseFiles: CaseFile[] = [
   },
   {
     id: "CF-002",
+    title: "RoboStore TH",
+    classification: "Production E-Commerce",
+    summary:
+      "A live commerce platform built for RAASPAL — a Thai smart-robotics storefront with product catalog, demo booking, and a fully localized bilingual UI.",
+    stack: ["Next.js", "React", "TypeScript"],
+    image: "/project-raaspal.png",
+    demo: "https://e-commerce-raaspal.vercel.app/",
+  },
+  {
+    id: "CF-003",
     title: "AI Studio",
     classification: "Web Application",
     summary:
@@ -85,7 +95,7 @@ export const caseFiles: CaseFile[] = [
     demo: "https://brannys-ai-studio.netlify.app",
   },
   {
-    id: "CF-003",
+    id: "CF-004",
     title: "Breast Cancer Predictor",
     classification: "Machine Learning",
     summary:
