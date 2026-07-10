@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { GithubIcon } from "./BrandIcons";
 import { caseFiles, type CaseFile } from "@/lib/data";
 import { Reveal } from "./Reveal";
@@ -22,13 +22,16 @@ function CaseCard({ file, index }: { file: CaseFile; index: number }) {
   }
 
   return (
-    <Reveal delay={index * 0.08}>
+    <Reveal
+      delay={index * 0.1}
+      className="flex w-[300px] shrink-0 snap-start sm:w-[340px] lg:w-[360px]"
+    >
       <motion.article
         ref={ref}
         onMouseMove={onMouseMove}
         whileHover={{ y: -6 }}
         transition={{ duration: 0.35, ease: "easeOut" }}
-        className="spotlight-card group flex h-full flex-col overflow-hidden border border-steel bg-graphite/70 transition-colors duration-500 hover:border-amber/50"
+        className="spotlight-card group flex h-full w-full flex-col overflow-hidden border border-steel bg-graphite/70 transition-colors duration-500 hover:border-amber/50"
       >
         <div className="relative aspect-[16/10] overflow-hidden border-b border-steel">
           <Image
@@ -66,15 +69,17 @@ function CaseCard({ file, index }: { file: CaseFile; index: number }) {
             ))}
           </ul>
 
-          <div className="mt-6 flex items-center gap-3 border-t border-steel/60 pt-5">
-            <a
-              href={file.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-fog transition-colors hover:text-amber"
-            >
-              <GithubIcon size={14} /> Source
-            </a>
+          <div className="mt-6 flex items-center gap-4 border-t border-steel/60 pt-5">
+            {file.github && (
+              <a
+                href={file.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.2em] text-fog transition-colors hover:text-amber"
+              >
+                <GithubIcon size={14} /> Source
+              </a>
+            )}
             {file.demo && (
               <a
                 href={file.demo}
@@ -99,11 +104,22 @@ function CaseCard({ file, index }: { file: CaseFile; index: number }) {
 export function CaseFiles() {
   return (
     <section id="cases" className="relative z-10 mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
-      <SectionHeading file="03" label="Evidence of operations" title="Case Files" />
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
-        {caseFiles.map((file, i) => (
-          <CaseCard key={file.id} file={file} index={i} />
-        ))}
+      <div className="flex items-end justify-between gap-4">
+        <SectionHeading file="03" label="Evidence of operations" title="Case Files" />
+        <p className="mb-1 hidden shrink-0 items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ash sm:flex">
+          Scroll <ArrowRight size={13} className="text-amber" />
+        </p>
+      </div>
+
+      {/* horizontal scroll rail — bleeds to the section edges */}
+      <div className="-mx-5 sm:-mx-8">
+        <div className="case-rail flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth px-5 pb-6 sm:px-8 lg:gap-7">
+          {caseFiles.map((file, i) => (
+            <CaseCard key={file.id} file={file} index={i} />
+          ))}
+          {/* trailing spacer so the last card clears the edge */}
+          <span aria-hidden className="w-px shrink-0" />
+        </div>
       </div>
     </section>
   );

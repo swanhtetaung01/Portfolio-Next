@@ -198,6 +198,30 @@ body {
   opacity: 1;
 }
 
+/* ---- case-files horizontal rail: themed slim scrollbar ---- */
+.case-rail {
+  scrollbar-width: thin;
+  scrollbar-color: var(--steel) transparent;
+}
+
+.case-rail::-webkit-scrollbar {
+  height: 6px;
+}
+
+.case-rail::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.case-rail::-webkit-scrollbar-thumb {
+  background: var(--steel);
+  border-radius: 999px;
+  transition: background 0.3s ease;
+}
+
+.case-rail:hover::-webkit-scrollbar-thumb {
+  background: var(--amber-dim);
+}
+
 /* ---- redacted-bar hover trick for the dossier text ---- */
 .redacted {
   background: var(--steel);
