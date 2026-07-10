@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Swan Htet Aung — Portfolio
+
+A personal portfolio site built with Next.js, styled around a noir "case file" theme. Showcases background, skills, and projects.
+
+Live sections: **Hero → Marquee → About → Arsenal (skills) → Case Files (projects) → Contact**
+
+## Tech Stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack)
+- [React 19](https://react.dev)
+- [Tailwind CSS 4](https://tailwindcss.com)
+- [Framer Motion](https://www.framer.com/motion/) for animation
+- [Lucide React](https://lucide.dev) for icons
+- TypeScript
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view it.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Description                       |
+| --------------- | ---------------------------------- |
+| `npm run dev`   | Start the dev server (Turbopack)   |
+| `npm run build` | Build for production               |
+| `npm run start` | Serve the production build         |
+| `npm run lint`  | Run ESLint                         |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/            # App Router entry (layout, page, global styles)
+  components/     # Section components (Hero, About, Arsenal, CaseFiles, Contact, Nav, Footer, ...)
+  lib/data.ts     # All site content: bio, skills, and projects
+public/           # Static images, resume/CV
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Editing Content
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+All personal content — name, bio, stats, skills, and projects — lives in a single file: [`src/lib/data.ts`](src/lib/data.ts). Update it and the relevant sections re-render automatically.
 
-## Deploy on Vercel
+Static assets (profile photo, project screenshots, resume) live in [`public/`](public) and are referenced by root-relative paths (e.g. `/portrait.jpg`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploys cleanly to [Vercel](https://vercel.com/new) or any platform that supports Next.js. Run `npm run build` followed by `npm run start` to verify a production build locally.
