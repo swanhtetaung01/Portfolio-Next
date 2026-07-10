@@ -1,11 +1,11 @@
 export const subject = {
   name: "Swan Htet Aung",
-  role: "Software Engineer",
+  role: "Software Engineer at RAASPAL",
   email: "swanhtetag09@gmail.com",
   linkedin: "https://www.linkedin.com/in/swan-htet-aung09",
   github: "https://github.com/swanhtetaung01",
   location: "Operating after dark",
-  bio: "Computer Engineering graduate with a strong pull toward backend systems. Builds practical software with Java, Spring Boot, and web technologies — full-stack apps, UI work, and the occasional machine learning model. Interested in problem-solving and in shipping applications people actually enjoy using. Currently sharpening skills through personal and academic projects while hunting for real-world experience.",
+  bio: "Computer Engineering graduate with a strong pull toward backend systems. Currently working as a Software Engineer at RAASPAL, building practical software with Java, Spring Boot, and modern web technologies — full-stack apps, UI work, and the occasional machine learning model. Interested in problem-solving and in shipping applications people actually enjoy using.",
   stats: [
     { label: "Field experience", value: "1+ yrs", detail: "full-stack development" },
     { label: "Training", value: "B.Eng.", detail: "Computer Engineering" },

@@ -44,9 +44,9 @@ export function About() {
               {subject.bio}
             </p>
             <p className="mt-5 font-mono text-xs leading-relaxed text-ash">
-              Current objective:{" "}
+              Current post:{" "}
               <span className="redacted px-1" tabIndex={0}>
-                secure internship or entry-level role, gain field experience
+                Software Engineer / Product Engineer at RAASPAL
               </span>{" "}
               <span className="text-ash/60">(hover to declassify)</span>
             </p>
