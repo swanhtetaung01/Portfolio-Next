@@ -27,6 +27,7 @@ export const arsenal: { division: string; brief: string; skills: Skill[] }[] = [
       { name: "CSS", level: "Experienced" },
       { name: "JavaScript", level: "Intermediate" },
       { name: "React", level: "Intermediate" },
+      { name: "Next.js", level: "Intermediate" },
       { name: "Flutter", level: "Basic" },
       { name: "Python", level: "Basic" },
     ],
@@ -39,6 +40,7 @@ export const arsenal: { division: string; brief: string; skills: Skill[] }[] = [
       { name: "Spring Boot", level: "Experienced" },
       { name: "Spring Security", level: "Intermediate" },
       { name: "Node.js", level: "Basic" },
+      { name: "Next.js", level: "Intermediate" },
     ],
   },
 ];
